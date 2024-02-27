@@ -7,6 +7,9 @@ const arrEvent = [];
 process.on("SIGINT", (event) => {
     arrEvent.push(event);
     console.log('Just Received SIGINT.');
+})
+
+setInterval(() => {
     setTimeout(() => {
         if (arrEvent.length >= 2) {
             console.log("Stop process NODE.JS!");
@@ -15,6 +18,4 @@ process.on("SIGINT", (event) => {
             arrEvent.length = 0;
         }
     }, 3000)
-})
-
-setInterval(() => { }, 2000);
+}, 2000);
