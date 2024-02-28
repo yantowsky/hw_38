@@ -8,7 +8,7 @@ process.on("SIGINT", (event) => {
     arrEvent.push(event);
     console.log('Just Received SIGINT.');
     setTimeout(() => {
-        if (arrEvent.length >= 2) {
+        if (arrEvent.length > 1) {
             console.log("Stop process NODE.JS!");
             process.exit(0);
         } else {
